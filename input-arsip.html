@@ -9,8 +9,45 @@
 </head>
 <body class="bg-gray-100">
 
-    <!-- Navbar Global -->
-    <iframe src="layout.html" class="w-full h-32 border-0"></iframe>
+    <!-- Navbar (REPLACE iframe) -->
+    <nav class="bg-white shadow px-6 py-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-xl font-bold text-blue-700">Dinas Kearsipan Provinsi Sumatera Selatan</h1>
+            <p class="text-gray-600 text-sm">Sistem Manajemen Arsip Digital</p>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <span class="text-gray-700">Selamat datang, <b>Admin</b></span>
+
+            <!-- Logout -->
+            <button 
+                onclick="window.location.href='login.html'"
+                class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 flex items-center">
+                <span class="mr-1">🔓</span> Logout
+            </button>
+        </div>
+    </nav>
+
+    <!-- Tabs menu -->
+    <div class="bg-white shadow mt-2 px-6 py-3 flex space-x-6">
+
+        <a href="dashboard.html" class="text-gray-600 hover:text-blue-600 flex items-center">
+            🏠 Dashboard
+        </a>
+
+        <a href="input-arsip.html" class="text-blue-600 font-medium flex items-center">
+            ➕ Input Arsip
+        </a>
+
+        <a href="pencarian.html" class="text-gray-600 hover:text-blue-600 flex items-center">
+            🔍 Pencarian
+        </a>
+
+        <a href="data-arsip.html" class="text-gray-600 hover:text-blue-600 flex items-center">
+            📂 Data Arsip
+        </a>
+
+    </div>
 
     <main class="p-6">
         <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
