@@ -14,24 +14,36 @@
             <h1 class="text-xl font-bold text-blue-700">Dinas Kearsipan Provinsi Sumatera Selatan</h1>
             <p class="text-gray-600 text-sm">Sistem Manajemen Arsip Digital</p>
         </div>
+
         <div class="flex items-center space-x-4">
             <span class="text-gray-700">Selamat datang, <b>Admin</b></span>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 flex items-center">
-                    <span class="mr-1">🔓</span> Logout
-                </button>
-            </form>
+
+            <!-- FIXED: logout hanya redirect ke login.html -->
+            <button 
+                onclick="window.location.href='login.html'" 
+                class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 flex items-center">
+                <span class="mr-1">🔓</span> Logout
+            </button>
         </div>
     </nav>
 
     <!-- Tabs menu -->
     <div class="bg-white shadow mt-2 px-6 py-3 flex space-x-6">
-        <a href="#" class="text-blue-600 font-medium flex items-center">🏠 Dashboard</a>
-        <a href="{{ route('arsip.create') }}" class="text-gray-600 hover:text-blue-600 flex items-center">➕ Input Arsip</a>
-        <a href="#" class="text-gray-600 hover:text-blue-600 flex items-center">🔍 Pencarian</a>
-        <a href="#" class="text-gray-600 hover:text-blue-600 flex items-center">📂 Data Arsip</a>
-        
+
+        <!-- Semua link statis -->
+        <a href="dashboard.html" class="text-blue-600 font-medium flex items-center">🏠 Dashboard</a>
+
+        <a href="input-arsip.html" class="text-gray-600 hover:text-blue-600 flex items-center">
+            ➕ Input Arsip
+        </a>
+
+        <a href="pencarian.html" class="text-gray-600 hover:text-blue-600 flex items-center">
+            🔍 Pencarian
+        </a>
+
+        <a href="data-arsip.html" class="text-gray-600 hover:text-blue-600 flex items-center">
+            📂 Data Arsip
+        </a>
     </div>
 
     <!-- Statistik Cards -->
@@ -60,6 +72,7 @@
             <h3 class="font-semibold mb-4">Distribusi Jenis Arsip</h3>
             <canvas id="jenisArsipChart"></canvas>
         </div>
+
         <div class="bg-white p-6 rounded-lg shadow">
             <h3 class="font-semibold mb-4">Distribusi Media Arsip</h3>
             <canvas id="mediaArsipChart"></canvas>
@@ -74,15 +87,13 @@
                 <h2 class="text-2xl font-bold text-indigo-700">2</h2>
                 <p>Tahun 2024</p>
             </div>
+
             <div class="bg-indigo-100 text-center p-6 rounded-lg shadow">
                 <h2 class="text-2xl font-bold text-indigo-700">1</h2>
                 <p>Tahun 2023</p>
             </div>
         </div>
     </div>
-
-  
-    
 
     <!-- Script Chart.js -->
     <script>
@@ -96,8 +107,7 @@
                     data: [1, 1, 1],
                     backgroundColor: ['#ef4444', '#f59e0b', '#8b5cf6']
                 }]
-            },
-            options: { responsive: true }
+            }
         });
 
         const mediaCtx = document.getElementById('mediaArsipChart');
@@ -107,11 +117,10 @@
                 labels: ['Digital'],
                 datasets: [{
                     label: 'Jumlah',
-                    data: [2, 1],
-                    backgroundColor: ['#10b981', '#8b5cf6']
+                    data: [2],
+                    backgroundColor: ['#10b981']
                 }]
-            },
-            options: { responsive: true }
+            }
         });
     </script>
 
