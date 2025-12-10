@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Arsip</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow px-6 py-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-xl font-bold text-blue-700">Dinas Kearsipan Provinsi Sumatera Selatan</h1>
+            <p class="text-gray-600 text-sm">Sistem Manajemen Arsip Digital</p>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <span class="text-gray-700">Selamat datang, <b>Admin</b></span>
+
+            <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                    </path>
+                </svg>
+                Logout
+            </button>
+        </div>
+    </nav>
+
+    <!-- Tab Menu -->
+    <div class="bg-white shadow-sm px-6 py-3 flex space-x-6 border-t border-gray-200">
+        <a href="dashboard.html" class="text-gray-600 hover:text-blue-600 flex items-center">Dashboard</a>
+        <a href="input-arsip.html" class="text-gray-600 hover:text-blue-600 flex items-center">Input Arsip</a>
+        <a href="pencarian.html" class="text-gray-600 hover:text-blue-600 flex items-center">Pencarian</a>
+        <a href="data-arsip.html" class="text-blue-600 font-semibold flex items-center border-b-2 border-blue-600">Data Arsip</a>
+        <a href="backup.html" class="text-gray-600 hover:text-blue-600 flex items-center">Backup</a>
+    </div>
+
+    <!-- Content -->
+    <main class="p-6" id="content-area">
+
+        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Edit Arsip: Judul Arsip</h2>
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+
+                <!-- Kode Arsip -->
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Kode Arsip</label>
+                    <input type="text" class="w-full rounded-lg shadow-sm border-gray-300"
+                           value="123-ABC">
+                </div>
+
+                <!-- Judul Arsip -->
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Judul Arsip</label>
+                    <input type="text" class="w-full rounded-lg shadow-sm border-gray-300"
+                           value="Nama Arsip">
+                </div>
+
+                <!-- Deskripsi -->
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
+                    <textarea rows="3" class="w-full rounded-lg shadow-sm border-gray-300">Deskripsi arsip...</textarea>
+                </div>
+
+                <!-- Jenis Arsip -->
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Jenis Arsip</label>
+                    <select class="w-full rounded-lg shadow-sm border-gray-300">
+                        <option>-- Pilih Jenis Arsip --</option>
+                        <option selected>Dokumen Legal</option>
+                        <option>Laporan</option>
+                        <option>Foto/Video</option>
+                        <option>Lainnya</option>
+                    </select>
+                </div>
+
+                <!-- Tanggal -->
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Arsip</label>
+                    <input type="date" class="w-full rounded-lg shadow-sm border-gray-300"
+                           value="2024-12-01">
+                </div>
+
+                <!-- File Upload -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Upload File (Opsional)</label>
+
+                    <input type="file" class="w-full border border-gray-300 rounded-lg p-2 
+                           file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 
+                           file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 
+                           hover:file:bg-blue-100">
+
+                    <p class="text-sm text-gray-500 mt-2">
+                        File saat ini: <span class="text-blue-600">arsip-dokumen.pdf</span>
+                    </p>
+                </div>
+
+                <!-- Tombol -->
+                <div class="flex justify-end">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Simpan Perubahan
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+
+</body>
+</html>

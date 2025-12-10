@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Arsip</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar Global -->
+    <iframe src="layout.html" class="w-full h-32 border-0"></iframe>
+
+    <main class="p-6">
+        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Input Arsip Baru</h2>
+
+            <form onsubmit="submitArsip(); return false;">
+
+                <div class="mb-4">
+                    <label class="block mb-1">Kode Arsip</label>
+                    <input type="text" id="kode_arsip"
+                           class="w-full rounded-lg shadow-sm border-gray-300"
+                           required>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block mb-1">Judul Arsip</label>
+                    <input type="text" id="judul"
+                           class="w-full rounded-lg shadow-sm border-gray-300"
+                           required>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block mb-1">Deskripsi</label>
+                    <textarea id="deskripsi" rows="3"
+                              class="w-full rounded-lg shadow-sm border-gray-300"></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block mb-1">Jenis Arsip</label>
+                    <select id="jenis_arsip"
+                            class="w-full rounded-lg shadow-sm border-gray-300"
+                            required>
+                        <option value="">-- Pilih Jenis Arsip --</option>
+                        <option>Dokumen Legal</option>
+                        <option>Laporan</option>
+                        <option>Foto/Video</option>
+                        <option>Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block mb-1">Tanggal Arsip</label>
+                    <input type="date" id="tanggal"
+                           class="w-full rounded-lg shadow-sm border-gray-300"
+                           required>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-1">Upload File (Opsional)</label>
+                    <input type="file" id="file"
+                           class="w-full border-gray-300 rounded-lg p-2 
+                                  file:bg-blue-50 file:text-blue-700">
+                </div>
+
+                <div class="flex justify-end">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                        Simpan Arsip
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function submitArsip() {
+            alert("Arsip berhasil disimpan!");
+            window.location.href = "data-arsip.html";
+        }
+    </script>
+
+</body>
+</html>
